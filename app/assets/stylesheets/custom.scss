@@ -64,12 +64,12 @@ p {
   letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
+  &:hover {
+    color: #fff;
+    text-decoration: none;
+  }
 }
 
-#logo:hover {
-  color: #fff;
-  text-decoration: none;
-}
 
 /* footer */
 
