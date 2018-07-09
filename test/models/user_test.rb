@@ -90,4 +90,15 @@ class UserTest < ActiveSupport::TestCase
     @user.password = @user.password_confirmation = "a" * 5
     assert_not @user.valid?
   end
+
+  # Micropost Feed Tests
+  test "should follow and unfollow a user" do
+    michael = users(:michael)
+    archer  = users(:archer)
+    assert_not michael.following?(archer)
+    michael.follow(archer)
+    assert michael.following?(archer)
+    michael.unfollow(archer)
+    assert_not michael.following?(archer)
+  end
 end
